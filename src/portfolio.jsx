@@ -1,4 +1,8 @@
 import { useState, useEffect, useRef } from "react";
+import ESC101backpacks from "./assets/esc101-backpack.jpg";
+import ESC101backpacks2 from "./assets/esc101-backpack-2.jpg";
+import ESC101backpacks3 from "./assets/esc101-backpack-3.png";
+
 
 const NAV_ITEMS = [
   { id: "position", label: "About Me" },
@@ -171,10 +175,15 @@ function ProjectSection({ id, title, subtitle, tag, children, accent = "#185FA5"
   );
 }
 
-function TwoCol({ left, right, flip = false }) {
+function TwoCol({ left, right, center, flip = false }) {
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 32, marginBottom: 32 }}>
       {flip ? <>{right}{left}</> : <>{left}{right}</>}
+      {center && (
+        <div style={{ gridColumn: "1 / -1", display: "flex", justifyContent: "center" }}>
+          {center}
+        </div>
+      )}
     </div>
   );
 }
@@ -199,6 +208,7 @@ function StrandLegend() {
     </div>
   );
 }
+
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("position");
@@ -288,8 +298,19 @@ export default function Portfolio() {
               ))}
             </div>
           </FadeIn>
+          <FadeIn delay={0.25}>
+          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
+            <iframe
+              src="https://www.youtube.com/embed/xtdQjQLA41g"
+              title="Original Position Statement"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+            />
+          </div>
+        </FadeIn>
           <FadeIn delay={0.5}>
-            <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+            <div style={{ display: "flex", gap: 12, marginTop: 32, alignItems: "center" }}>
               <button onClick={() => scrollTo("ttc")} style={{
                 background: "#185fa5", color: "white", border: "none", borderRadius: 24,
                 padding: "12px 28px", fontFamily: "'DM Mono', monospace", fontSize: 13,
@@ -321,15 +342,71 @@ export default function Portfolio() {
           }
           right={
             <FadeIn delay={0.2}>
-              <ImagePlaceholder label="Concept sketches — backpack holding devices" icon="✏️" />
-              <div style={{ marginTop: 12 }}>
-                <ImagePlaceholder label="Crowded TTC environment reference photo" aspect="4/3" icon="🚇" />
-              </div>
+              <figure style={{ margin: 0, width: "100%" }}>
+              <img
+                src={ESC101backpacks}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                Concept sketches — backpack holding devices
+              </figcaption>
+            </figure>
             </FadeIn>
           }
+          center={
+          <div style={{ display: "flex", gap: "12px", marginTop: 12 }}>
+            <figure style={{ margin: 0, width: "100%" }}>
+              <img
+                src={ESC101backpacks}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                Concept sketches — backpack holding devices
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0, width: "100%" }}>
+              <img
+                src={ESC101backpacks}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                Concept sketches — backpack holding devices
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0, width: "100%" }}>
+              <img
+                src={ESC101backpacks}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                Concept sketches — backpack holding devices
+              </figcaption>
+            </figure>
+          </div>
+        }
         />
+        <FadeIn delay={0.25}>
+            <figure style={{ margin: 0, width: "100%" }}>
+          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
+            <iframe
+              src="https://www.youtube.com/embed/ziX5uLrI2CU"
+              title="TTC Backpack Handling Device Proxy Tests Video Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+            />
+          </div>
+          <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+            TTC Backpack Handling Device Proxy Tests Video Demo
+          </figcaption>
+        </figure>
+        </FadeIn>
         <FadeIn delay={0.3}>
-          <div style={{ background: "white", borderRadius: 16, padding: "24px 28px", border: "1px solid #d3d1c7", marginBottom: 32 }}>
+          <div style={{ background: "white", borderRadius: 16, padding: "24px 28px", border: "1px solid #d3d1c7", marginTop: 32, marginBottom: 32 }}>
             <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 20px" }}>Design Process — Frame · Diverge · Converge · Represent</h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16 }}>
               {[
@@ -410,7 +487,20 @@ export default function Portfolio() {
           flip
         />
         <FadeIn delay={0.25}>
-          <VideoPlaceholder label="Bridge failure test video — load-to-failure recording" />
+          <figure style={{ margin: 0, width: "100%" }}>
+          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
+            <iframe
+              src="https://www.youtube.com/embed/PaZJY5GGCWY"
+              title="Bridge failure test video — load-to-failure recording"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+            />
+          </div>
+          <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+            Bridge failure test video — load-to-failure recording
+          </figcaption>
+        </figure>
         </FadeIn>
         <FadeIn delay={0.35}>
           <div style={{ background: "white", borderRadius: 16, padding: "24px 28px", border: "1px solid #d3d1c7", margin: "24px 0" }}>
@@ -515,8 +605,24 @@ export default function Portfolio() {
             </div>
           </div>
         </FadeIn>
+        <FadeIn delay={0.25}>
+          <figure style={{ margin: 0, width: "100%" }}>
+          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
+            <iframe
+              src="https://www.youtube.com/embed/nVlKhhna70w"
+              title="COMETS Video Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+            />
+          </div>
+          <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+            COMETS Video Demo
+          </figcaption>
+        </figure>
+        </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, marginTop: 32, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
           <StrandLegend />
           <CTMFCard
             name="PIAA (Problem Identification and Analysis)"
@@ -606,8 +712,24 @@ export default function Portfolio() {
             </div>
           </div>
         </FadeIn>
+        <FadeIn delay={0.25}>
+          <figure style={{ margin: 0, width: "100%" }}>
+          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
+            <iframe
+              src="https://www.youtube.com/embed/WymWjTdylFE"
+              title="UofTHacks Robot Lamp Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+            />
+          </div>
+          <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+            UofTHacks Robot Lamp Demo
+          </figcaption>
+        </figure>
+        </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, marginTop: 32, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Design Space Exploration"
@@ -688,8 +810,24 @@ export default function Portfolio() {
             </div>
           </div>
         </FadeIn>
+        <FadeIn delay={0.25}>
+          <figure style={{ margin: 0, width: "100%" }}>
+          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
+            <iframe
+              src="https://www.youtube.com/embed/9tCgYZWgbdw"
+              title="Sumo Competition Match Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+            />
+          </div>
+          <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+            Sumo Competition Match Video
+          </figcaption>
+        </figure>
+        </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", marginTop: 32, fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Reference Design"
@@ -725,7 +863,7 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer style={{ background: "#2c2c2a", color: "#888780", padding: "60px 28px", textAlign: "center" }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, color: "white", marginBottom: 12 }}>Engineering Portfolio</div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, color: "white", marginBottom: 12 }}>Engineering Portfolio - Cindy Zhu</div>
         <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, marginBottom: 24 }}>ESC102 · ENGINEERING SCIENCE PRAXIS II · 2026</div>
         <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
           {NAV_ITEMS.map(n => (
