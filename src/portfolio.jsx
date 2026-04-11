@@ -2,6 +2,32 @@ import { useState, useEffect, useRef } from "react";
 import ESC101backpacks from "./assets/esc101-backpack.jpg";
 import ESC101backpacks2 from "./assets/esc101-backpack-2.jpg";
 import ESC101backpacks3 from "./assets/esc101-backpack-3.png";
+import ESC101team from "./assets/esc101-team.jpg";
+import CIV102build from "./assets/civ102-build.jpg";
+import CIV102build2 from "./assets/civ102-build2.jpg";
+import CIV102build3 from "./assets/civ102-build3.jpg";
+import CIV102build4 from "./assets/civ102-build4.jpg";
+import CIV102build5 from "./assets/civ102-build5.jpg";
+import CIV102calc from "./assets/civ102-calc.png";
+import CIV102calc2 from "./assets/civ102-calc2.png";
+import CIV102matlab from "./assets/civ102-matlab.png";
+import CIV102matlab2 from "./assets/civ102-matlab2.png";
+import CIV102team from "./assets/civ102-team-pic.jpg";
+import ESC102arduino from "./assets/esc102-arduino.jpg";
+import ESC102cone from "./assets/esc102-cone.jpg";
+import ESC102rpi from "./assets/esc102-rpi.jpg";
+import ESC102showcase from "./assets/esc102-showcase.jpg";
+import ESC102showcase2 from "./assets/esc102-showcase2.jpg";
+import ESC102solder from "./assets/esc102-solder.jpg";
+import ESC102toothpaste from "./assets/esc102-toothpaste-demo.mp4";
+import ESC102toothpaste2 from "./assets/esc102-toothpaste.jpg";
+import SUMOblue from "./assets/sumo-blue.jpg";
+import SUMOfinal from "./assets/sumo-final.jpg";
+import SUMOfinal2 from "./assets/sumo-final2.jpg";
+import SUMOfinal3 from "./assets/sumo-final3.jpg";
+import UOFTbuild from "./assets/uoft-build.jpg";
+import UOFTbuild2 from "./assets/uoft-build2.jpg";
+import UOFTfinal from "./assets/uoft-final.jpg";
 
 
 const NAV_ITEMS = [
@@ -142,13 +168,13 @@ function CTMFCard({ name, strand, description, evidence, assessment }) {
         transition: "max-height 0.4s ease",
       }}>
         <div style={{ padding: "0 18px 18px" }}>
-          <p style={{ fontSize: 14, color: "#444441", lineHeight: 1.7, margin: "0 0 10px" }}>{description}</p>
-          {evidence && <div style={{ background: "#f1efe8", borderRadius: 8, padding: "10px 14px", marginBottom: 10 }}>
+          <p style={{ fontSize: 14, color: "#444441", lineHeight: 1.7, margin: "0 0 10px", textAlign: "justify" }}>{description}</p>
+          {evidence && <div style={{ background: "#f1efe8", borderRadius: 8, padding: "10px 14px", marginBottom: 10, textAlign: "justify"}}>
             <span style={{ fontSize: 11, fontFamily: "'DM Mono', monospace", color: "#888780", letterSpacing: 1 }}>EVIDENCE</span>
             <p style={{ fontSize: 13, color: "#444441", margin: "4px 0 0", lineHeight: 1.6 }}>{evidence}</p>
           </div>}
-          {assessment && <div style={{ background: "#e6f1fb", borderRadius: 8, padding: "10px 14px" }}>
-            <span style={{ fontSize: 11, fontFamily: "'DM Mono', monospace", color: "#185fa5", letterSpacing: 1 }}>ASSESSMENT</span>
+          {assessment && <div style={{ background: "#e6f1fb", borderRadius: 8, padding: "10px 14px", textAlign: "justify" }}>
+            <span style={{ fontSize: 11, fontFamily: "'DM Mono', monospace", color: "#185fa5", letterSpacing: 1 }}>HOW THIS CONTRIBUTED TO MY UNDERSTANDING OF THE DESIGN PROCESS</span>
             <p style={{ fontSize: 13, color: "#185fa5", margin: "4px 0 0", lineHeight: 1.6 }}>{assessment}</p>
           </div>}
         </div>
@@ -162,7 +188,7 @@ function ProjectSection({ id, title, subtitle, tag, children, accent = "#185FA5"
     <section id={id} style={{ minHeight: "100vh", padding: "100px 0 60px", scrollMarginTop: 64 }}>
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 28px" }}>
         <FadeIn>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
+          <div style={{ display: "flex", alignItems: "left", gap: 12, marginBottom: 8 }}>
             <div style={{ height: 2, width: 40, background: accent }} />
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: accent, letterSpacing: 2, textTransform: "uppercase" }}>{tag}</span>
           </div>
@@ -192,7 +218,7 @@ function InfoCard({ label, children }) {
   return (
     <div style={{ background: "#f1efe8", borderRadius: 12, padding: "20px 24px", marginBottom: 16 }}>
       <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#888780", letterSpacing: 2, textTransform: "uppercase", marginBottom: 8 }}>{label}</div>
-      <div style={{ fontSize: 15, color: "#2c2c2a", lineHeight: 1.7 }}>{children}</div>
+      <div style={{ fontSize: 15, color: "#2c2c2a", lineHeight: 1.7, textAlign: "justify" }}>{children}</div>
     </div>
   );
 }
@@ -323,20 +349,32 @@ export default function Portfolio() {
       </section>
 
       {/* Project 1 — TTC */}
-      <ProjectSection id="ttc" title="Accessible Backpack Handling on the TTC" subtitle="Clean and Compliant · ESC101" tag="Project 01 · Praxis I" accent="#185FA5">
+      <ProjectSection id="ttc" title="Accessible Backpack Handling on the TTC" subtitle="Praxis I · ESC101 · Featuring Krystana Alvear, Emma Choi, and Yangxin Zhou" tag="Project 01 · Praxis I" accent="#185FA5">
         <TwoCol
           left={
             <div>
               <FadeIn delay={0.1}>
-                <InfoCard label="The Problem">
-                  TTC Bylaw No. 1 requires passengers to remove backpacks in crowded vehicles. But subway floors are often unsanitary — creating a direct conflict between policy compliance and cleanliness.
+                <InfoCard label="The 'Splartz' Problem">
+                  According to the Toronto Transit Commission (TTC) Bylaw No. 1, it is required that all TTC passengers remove their backpacks from their back during peak hours of operation (Mon-Fri, 7:00-10:00am & 4:00-7:00pm) in TTC subway trains. 
+                  However, this poses a problem for University of Toronto first year Engineering Science commuter students. Many of whom have to carry backpacks to the university with an average of 6kg in weight, which include their laptops, waterbottles, tablets and/or notebooks, lunch bags, and other miscellaneous items. 
+                  At the same time however, since there are many other passengers that are continously getting off and on at each subway station, this would require students to continously bend down and move their backpack in order to 
+                  accommodate the flow of passengers, which is difficult, inconvient, and also causes physical health risks such as back pain and strain for students. 
                 </InfoCard>
                 <InfoCard label="Design Outcome">
-                  Devices that allow commuters to remove backpacks while keeping them elevated and clean — enabling bylaw compliance without floor contact. Focused on minimal interference with other passengers and ease of use while standing.
+                  In order to solve this opportunity, my team and I designed a backpack handling device that would allow commuters to easily and quickly move their backpacks from their back to the front of their body, 
+                  while also improving their health and safety by reducing the need to bend down and move their backpacks on the ground continously. Therefore, reducing the risk of lower back pain and strain for students.
                 </InfoCard>
-                <InfoCard label="My Role">
-                  Identified and framed the design opportunity. Led ideation and evaluated feasibility and usability of concepts. Refined solution based on spatial constraints.
+                <InfoCard label="What My Team Did">
+                  My team and I conducted qualitative research on the TTC subway train by tracking the number of times we had to bend down and move our backpacks on our daily commute to and from the university. 
+                  We also conducted user interviews with other commuter students to understand their pain points and needs regarding the backpack handling process on the TTC.
+                  From there, we designed five main product concepts in time for Alpha Release. 
+                  These concepts included a foldable scooterboard design to rest the backpack on, a backpack extension strap to transform the backpack into a purse-like design,
+                  a backpack trolley tripod system where the backpack would hang in a tripod-like structure, a hook to hang your backpack from a side pole, and a knee platform
+                  that would allow you to put your backpack in-between your knees that's held together by your knees. All of these designs can be seen in the proxy testing videos
+                  we conducted on the TTC subway train, which can be found below. Additionally, in these proxy tests, we tested the most important features of each concept
+                  such as ease of use, speed of transition, and practicality in crowded environments.
                 </InfoCard>
+        
               </FadeIn>
             </div>
           }
@@ -346,48 +384,25 @@ export default function Portfolio() {
               <img
                 src={ESC101backpacks}
                 alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", marginTop: 64, display: "block" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                Backpack Extension Strap Concept Sketch
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0, marginTop: 64, width: "100%" }}>
+              <img
+                src={ESC101backpacks2}
+                alt="Concept sketches — backpack holding devices"
                 style={{ width: "100%", borderRadius: "8px", display: "block" }}
               />
               <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
-                Concept sketches — backpack holding devices
+                Backpack Hanger Hook Concept Sketch
               </figcaption>
             </figure>
             </FadeIn>
           }
-          center={
-          <div style={{ display: "flex", gap: "12px", marginTop: 12 }}>
-            <figure style={{ margin: 0, width: "100%" }}>
-              <img
-                src={ESC101backpacks}
-                alt="Concept sketches — backpack holding devices"
-                style={{ width: "100%", borderRadius: "8px", display: "block" }}
-              />
-              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
-                Concept sketches — backpack holding devices
-              </figcaption>
-            </figure>
-            <figure style={{ margin: 0, width: "100%" }}>
-              <img
-                src={ESC101backpacks}
-                alt="Concept sketches — backpack holding devices"
-                style={{ width: "100%", borderRadius: "8px", display: "block" }}
-              />
-              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
-                Concept sketches — backpack holding devices
-              </figcaption>
-            </figure>
-            <figure style={{ margin: 0, width: "100%" }}>
-              <img
-                src={ESC101backpacks}
-                alt="Concept sketches — backpack holding devices"
-                style={{ width: "100%", borderRadius: "8px", display: "block" }}
-              />
-              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
-                Concept sketches — backpack holding devices
-              </figcaption>
-            </figure>
-          </div>
-        }
+          
         />
         <FadeIn delay={0.25}>
             <figure style={{ margin: 0, width: "100%" }}>
@@ -410,9 +425,9 @@ export default function Portfolio() {
             <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 20px" }}>Design Process — Frame · Diverge · Converge · Represent</h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16 }}>
               {[
-                { phase: "Frame", color: "#185FA5", text: "Identified tension between policy requirements and commuter behavior." },
-                { phase: "Diverge", color: "#0F6E56", text: "Generated multiple device concepts for possible solutions." },
-                { phase: "Converge", color: "#993C1D", text: "Evaluated by usability, practicality, and feasibility in crowded environments." },
+                { phase: "Frame", color: "#185FA5", text: "Identified ergonomic safety challenges with the continous bending of backs while removing backpacks on TTC subway trains while commuting to university." },
+                { phase: "Diverge", color: "#0F6E56", text: "Generated multiple device concepts for possible solutions using the 50 concepts framework and brainwriting 5-3-6." },
+                { phase: "Converge", color: "#993C1D", text: "Evaluated by usability, practicality, and feasibility in crowded environments. Conducted proxy testing in actual TTC environments." },
                 { phase: "Represent", color: "#534AB7", text: "Communicated solutions through sketches and early prototypes." },
               ].map(p => (
                 <div key={p.phase} style={{ borderLeft: `3px solid ${p.color}`, paddingLeft: 14 }}>
@@ -424,42 +439,42 @@ export default function Portfolio() {
           </div>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Claims and Types of Claims"
             strand="Frame"
-            description="Structured arguments around evidence — commuter discomfort and transit rules — to justify why the problem mattered."
-            evidence="Used to frame the design opportunity around TTC Bylaw No. 1, grounding our problem statement in observable user pain points."
-            assessment="Highly effective for framing: forcing us to distinguish factual claims from design judgments prevented vague problem definitions. Best used at the start of any project to establish shared understanding of 'why this matters.'"
+            description="My team used the Toulmin's model of argument to structure claims around evidence, such as the fact that it is mandatory to remove backpacks while on the TTC subway trains according to the TTC Bylaw No. 1. Through this approach, my team was able to explain what the problem was, and justify why it mattered."
+            evidence="In our design brief and our final design report, my team structured our problem definition and design justification using claims supported by evidence from our user research and the TTC bylaw. Additionally, we conducted proxy testing on the TTC subway trains during actual commuting hours. In these tests, we made claims about the usability and practicality of our concepts, and supported them with evidence from user feedback and our own observations. As well, we created the proxy tests based on secondary resources and sources from many ISO and ASTM standards regarding backpack handling and ergonomic safety, which we used as evidence to justify the features we tested in our proxy tests."
+            assessment="This approach helped me understand the importance of structuring arguments with evidence and clarified the distinction between factual claims and design judgments. It also shaped my approach to gathering evidence and supporting claims based on user research and real-world constraints, which I see as essential for effective design communication and decision-making. I plan to continue using this framework to strengthen the rationale behind my design choices and to ensure that my solutions are well-grounded in evidence."
           />
           <CTMFCard
             name="Perry Model of Intellectual Development"
             strand="Diverge"
-            description="Highlighted how design problems rarely have a single correct solution. Moving from expecting one answer to accepting multiple viable solutions guided ideation."
-            evidence="Applied during concept generation — helped team resist anchoring to the first idea and continue exploring alternatives."
-            assessment="Useful as a mindset check. Less useful as an active tool mid-process, but powerful as a framing device when teams fall into premature convergence."
+            description="My team used the Perry Model of Intellectual Development during the initial diverging process, because rather than leaning towards what we thought what big 'A' authority wanted to see/hear, we decided to diverge into various ideas. From there, we were able to overcome our initial biases and assumptions about what it means to have an ergonomic solution to backpack handling on the TTC, and instead explore a wide range of possible solutions that could address the problem from different angles."
+            evidence="We applied the Perry Model during concept generation, where we encouraged each other to share all ideas without judgment, which led to a diverse set of concepts that we then refined and tested. This approach allowed us to move beyond our initial assumptions and explore a wider design space, ultimately leading to more innovative solutions. We did this during studio with brainwriting 5-3-6 and the 50 concepts framework, where we generated a large number of ideas before converging on the most promising ones for further development and testing."
+            assessment="I found this model helpful in understanding the value of embracing uncertainty and exploring a wide range of possibilities during the early stages of design. It reinforced the idea that divergent thinking is crucial for innovation and that it's important to create a safe space for all ideas to be shared and considered. Moving forward, I will continue to apply this mindset during the ideation phase of my projects to encourage creativity and avoid premature convergence on solutions."
           />
           <CTMFCard
             name="Codes and Standards"
             strand="Converge"
-            description="TTC Bylaw No. 1 acted as a real-world constraint that clarified requirements and grounded the solution in realistic implementation."
-            evidence="Bylaw defined the core requirement: backpacks must be removed from shoulders. This scoped the design space effectively."
-            assessment="Codes and standards are underused as design inputs — treating them as constraints rather than obstacles revealed a genuine design opportunity. Recommend applying early in any project with regulatory context."
+            description="Using various industry codes and standards relating to backpack handling and ergonomic safety, my team was able to identify key design requirements and constraints that informed our concept development and testing. For example, we learned about the recommended weight limits for backpacks and the importance of minimizing bending and awkward postures to reduce the risk of back pain. This information helped us focus our design efforts on creating solutions that would be practical and effective within the context of the TTC subway environment."
+            evidence="During the converging phase of proxy testing, we referred to ISO and ASTM standards on backpack handling and ergonomic safety to identify the most important features to test in our concepts. For instance, we focused on testing the ease of transitioning the backpack from back to front, the speed of this transition, and the practicality of using the device in crowded subway conditions. By grounding our testing in established standards, we were able to ensure that our design solutions were aligned with best practices for safety and usability."
+            assessment="Using various codes and standards helped me understand the importance of grounding design decisions in established guidelines and best practices. It reinforced the idea that effective design must consider not only user needs but also safety and regulatory requirements. This approach also highlighted the value of research and evidence in informing design choices, which I will continue to prioritize in my future projects to ensure that my solutions are both innovative and responsible."
           />
         </FadeIn>
         <FadeIn delay={0.5}>
           <div style={{ background: "#e6f1fb", borderRadius: 12, padding: "20px 24px", borderLeft: "4px solid #185fa5", marginTop: 8 }}>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#185fa5", letterSpacing: 2 }}>REFLECTION</span>
-            <p style={{ fontSize: 15, color: "#185fa5", margin: "8px 0 0", lineHeight: 1.7 }}>
-              This project reinforced the importance of human-centered design under real-world constraints. Engineering solutions often emerge from resolving tensions between policy, user behavior, and environmental conditions.
+            <p style={{ fontSize: 15, color: "#185fa5", margin: "8px 0 0", lineHeight: 1.7, textAlign: "justify" }}>
+              Overall, this design project contributed to my understanding of the design process by providing a practical example of how to apply various design frameworks and concepts in a real-world context. It reinforced the importance of human-centered design, evidence-based decision making, and iterative prototyping in creating effective solutions. Additionally, it highlighted the value of embracing divergent thinking and exploring a wide range of possibilities during the early stages of design. This experience has shaped my approach to future projects by encouraging me to prioritize user needs, gather evidence to support my design choices, and remain open to exploring diverse ideas before converging on a solution.
             </p>
           </div>
         </FadeIn>
       </ProjectSection>
 
       {/* Project 2 — Bridge */}
-      <ProjectSection id="bridge" title="Matboard Bridge Design & Failure Prediction" subtitle="Structural Analysis · CIV102" tag="Project 02 · CIV102" accent="#0F6E56">
+      <ProjectSection id="bridge" title="Matboard Bridge Design & Failure Prediction" subtitle="Structures and Materials · CIV102 · Featuring Cosima Maclean and Char Mikes" tag="Project 02 · CIV102" accent="#0F6E56">
         <TwoCol
           right={
             <FadeIn delay={0.1}>
@@ -520,7 +535,7 @@ export default function Portfolio() {
           </div>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Deductive vs Inductive Reasoning"
@@ -547,7 +562,7 @@ export default function Portfolio() {
         <FadeIn delay={0.5}>
           <div style={{ background: "#e1f5ee", borderRadius: 12, padding: "20px 24px", borderLeft: "4px solid #0f6e56", marginTop: 8 }}>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#0f6e56", letterSpacing: 2 }}>REFLECTION</span>
-            <p style={{ fontSize: 15, color: "#0f6e56", margin: "8px 0 0", lineHeight: 1.7 }}>
+            <p style={{ fontSize: 15, color: "#0f6e56", margin: "8px 0 0", lineHeight: 1.7, textAlign: "justify" }}>
               Simulation can predict behavior in ideal conditions, but real engineering requires accounting for manufacturing imperfections and material limitations. The 500 N gap between prediction and reality was not a failure of the model — it was a gap in assumptions about construction quality.
             </p>
           </div>
@@ -622,7 +637,7 @@ export default function Portfolio() {
         </figure>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, marginTop: 32, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, marginTop: 32, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="PIAA (Problem Identification and Analysis)"
@@ -729,7 +744,7 @@ export default function Portfolio() {
         </figure>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, marginTop: 32, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, marginTop: 32, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Design Space Exploration"
@@ -827,7 +842,7 @@ export default function Portfolio() {
         </figure>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", marginTop: 32, fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>CTMFs Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", marginTop: 32, fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Reference Design"
