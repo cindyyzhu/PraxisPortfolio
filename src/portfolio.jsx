@@ -478,23 +478,55 @@ export default function Portfolio() {
         <TwoCol
           right={
             <FadeIn delay={0.1}>
-              <ImagePlaceholder label="Bridge cross-section drawing / MATLAB model output" icon="📐" />
-              <div style={{ marginTop: 12 }}>
-                <ImagePlaceholder label="Physical bridge under load testing" aspect="4/3" icon="🌉" />
-              </div>
+              <figure style={{ margin: 0, marginTop: 0, width: "100%" }}>
+              <img
+                src={CIV102build}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", maxHeight: "350px", display: "block", objectFit: "cover" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+               Skethcing out and cutting the matboard pieces for the bridge design.
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0, marginTop: 0, width: "100%" }}>
+              <img
+                src={CIV102build4}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                Gluing the joints of the bridge together using contact cement.
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0, marginTop: 0, width: "100%" }}>
+              <img
+                src={CIV102team}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                Team picture with the Great EGGspectations before testing.
+              </figcaption>
+            </figure>
             </FadeIn>
           }
           left={
             <div>
               <FadeIn delay={0.15}>
                 <InfoCard label="Goal">
-                  Design a matboard and contact cement bridge to support maximum possible load, while predicting the failure load (N) and failure mode before physical testing.
+                  In the CIV102 Structures and Materials course, we were tasked with designing and building a bridge out of matboard and contact cement glue
+                  that could support a maximum load before failure. In groups of three, we had to predict what that maximum load was, and why the bridge would fail (the failure method).
+                  During the design process, we had to consider various factors such as the geometry of the bridge, the properties of the materials, and the expected load distribution. We also had to create an analytical model to predict the failure load and method, which we then tested through physical load-to-failure experiments. 
                 </InfoCard>
                 <InfoCard label="Outcome">
-                  Bridge failed ~500 N earlier than predicted. Investigation revealed the analytical model assumed ideal joints, while the real bridge had weak adhesive connections. Structural members remained intact — one teammate could stand on the bridge post-failure.
+                  Our bridge ("The Great EGGspectations") failed ~500 N earlier than predicted in the actual testing compared to our analytical model in MATLAB. We predicted failure at around 700 N, but the physical test showed failure at around 200 N. 
+                  The failure method was adhesive failure at the joints, which was not predicted by our analytical model. The bridge's structural members remained intact, and one of our teammates could even stand on the bridge post-failure without it collapsing completely.
+                  Our analytical model assumed ideal joints with perfect adhesion, which led to an overestimation of the bridge's load-bearing capacity. The real-world performance was limited by the weakness of the adhesive connections, which were the critical failure points under load.
                 </InfoCard>
-                <InfoCard label="My Role">
-                  Focused on analytical modeling and simulation — developed MATLAB calculations to analyze structural behavior and predict failure loads.
+                <InfoCard label="What my team did">
+                  After hand calculations and preliminary design iterations, we created a MATLAB model to predict the load distribution and failure point of our bridge design. We used beam and structural analysis principles to estimate the maximum load before failure, assuming ideal material properties and perfect joints.
+                  We then built a physical prototype of our bridge using matboard and contact cement, following the design specifications we developed. We conducted load-to-failure testing by gradually applying weight to the bridge until it failed, while recording the load at which failure occurred and observing the failure mode.
+                  Post-testing, we analyzed the results to understand the discrepancy between our predictions and the actual performance, leading us to identify the adhesive joints as the critical weak points that were not accounted for in our initial model.
                 </InfoCard>
               </FadeIn>
             </div>
@@ -517,23 +549,7 @@ export default function Portfolio() {
           </figcaption>
         </figure>
         </FadeIn>
-        <FadeIn delay={0.35}>
-          <div style={{ background: "white", borderRadius: 16, padding: "24px 28px", border: "1px solid #d3d1c7", margin: "24px 0" }}>
-            <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 16px" }}>Predicted vs Actual Performance</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-              <div style={{ background: "#eaf3de", borderRadius: 10, padding: "16px 20px", textAlign: "center" }}>
-                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#3b6d11", letterSpacing: 1 }}>PREDICTED FAILURE</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, fontWeight: 700, color: "#3b6d11", margin: "8px 0 4px" }}>N+500</div>
-                <div style={{ fontSize: 12, color: "#639922" }}>Theoretical model (ideal joints)</div>
-              </div>
-              <div style={{ background: "#fcebeb", borderRadius: 10, padding: "16px 20px", textAlign: "center" }}>
-                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#a32d2d", letterSpacing: 1 }}>ACTUAL FAILURE</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, fontWeight: 700, color: "#a32d2d", margin: "8px 0 4px" }}>N</div>
-                <div style={{ fontSize: 12, color: "#e24b4a" }}>Physical test (joint weakness)</div>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
+        
         <FadeIn delay={0.4}>
           <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
