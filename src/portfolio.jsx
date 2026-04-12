@@ -538,48 +538,103 @@ export default function Portfolio() {
           <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
             <iframe
               src="https://www.youtube.com/embed/PaZJY5GGCWY"
-              title="Bridge failure test video — load-to-failure recording"
+              title="CIV102 Bridge Failure Test Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
             />
           </div>
           <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
-            Bridge failure test video — load-to-failure recording
+            CIV102 Bridge Failure Test Video
           </figcaption>
         </figure>
         </FadeIn>
+        <FadeIn delay={0.3}>
+        <div style={{ display: "flex", gap: "12px", marginTop: 24, justifyContent: "center" }}>
+     <figure style={{ margin: 0, width: "42%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <img
+      src={CIV102calc2}
+      alt=""
+      style={{ width: "100%", borderRadius: "8px", display: "block" }}
+    />
+    <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+      Initial design iteration sketches and hand calculations to predict failure load and method.
+    </figcaption>
+  </figure>
+  <figure style={{ margin: 0, width: "50%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <img
+      src={CIV102calc}
+      alt=""
+      style={{ width: "100%", borderRadius: "8px", display: "block" }}
+    />
+        <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+          Iterative design refinements and updated hand calculations.
+        </figcaption>
+      </figure>
+    </div>
+    </FadeIn>
+    <FadeIn delay={0.35}>
+    <div style={{ display: "flex", gap: "12px", marginTop: 24, align: "center", justifyContent: "center" }}>
+      <figure style={{ margin: 0, width: "50%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <img
+          src={CIV102matlab}
+          alt=""
+          style={{ width: "100%", borderRadius: "8px", display: "block" }}
+        />
+        <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+          MATLAB simulation model for structural analysis.
+        </figcaption>
+      </figure>
+      <figure style={{ margin: 0, width: "50%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <img
+          src={CIV102matlab2}
+          alt=""
+          style={{ width: "100%", borderRadius: "8px", display: "block" }}
+        />
+        <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+          MATLAB simulation model for structural analysis.
+        </figcaption>
+      </figure>
+    </div>
+    </FadeIn>
         
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px", marginTop: 32 }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Deductive vs Inductive Reasoning"
             strand="Frame"
-            description="Deductive reasoning guided theoretical predictions using structural equations. Inductive reasoning emerged after testing, where observed failures informed understanding of real-world behavior."
-            evidence="MATLAB model used deductive logic from beam theory. Post-test analysis used inductive reasoning to identify joint failure as root cause."
-            assessment="Recognizing when to shift from deductive to inductive modes is a key engineering skill. This CTMF is most valuable when used consciously — not just retrospectively."
+            description="Originally, using deductive reasoning, my team formulated hypotheses based on structural theories that we learned in class taught to us by Professor Bentz in CIV102. From there, inductive reasoning was employed to analyze test results and refine our understanding."
+            evidence="We used deductive reasoning to predict the failure load based on idealized assumptions of material properties and joint strength. After testing, we applied inductive reasoning to interpret the results, leading us to identify the adhesive joints as the critical failure points that were not accounted for in our initial model. Additionally, we also verified our hand calculations using a MATLAB coded simulation model of our bridge design, which also used deductive reasoning to predict failure based on structural analysis principles."
+            assessment="This experience highlighted the importance of using both deductive and inductive reasoning in engineering design. While deductive reasoning allowed us to make predictions based on established theories, inductive reasoning was crucial for interpreting real-world results and refining our understanding of the system's behavior. Moving forward, I will continue to apply both forms of reasoning throughout the design process to ensure that my models are grounded in theory while also being informed by empirical evidence."
           />
+
+
           <CTMFCard
             name="Measurement Matrices"
             strand="Converge"
-            description="Evaluation matrices helped compare alternative designs and justify trade-offs between structural strength and material limits."
-            evidence="Used to select between different cross-section geometries and material configurations during design phase."
-            assessment="Effective for structured comparison, but only as good as the criteria selected. Weak criteria lead to false confidence in results. Should be paired with stakeholder validation."
+            description="After generating our initial design and predictions, we used a measurement matrix to evaluate different design iterations and select the most promising one for physical testing. We defined criteria such as predicted load capacity, material efficiency, and ease of construction, and assigned weights to each criterion based on their importance to the overall design goals."
+            evidence="We used the measurement matrix to compare different bridge designs and select the one that best met our criteria for load capacity, material efficiency, and constructability. This structured approach allowed us to make informed decisions about which design to prototype and test, based on a systematic evaluation of our options."
+            assessment="Using a measurement matrix helped me understand the value of structured decision-making tools in the design process. It provided a clear framework for evaluating different design options based on multiple criteria, which is essential for making informed choices in complex engineering problems. I will continue to use measurement matrices in future projects to ensure that my design decisions are well-justified and aligned with project goals."
+          
           />
+
+
+
           <CTMFCard
             name="Requirements and Design Concepts"
             strand="Frame"
-            description="Load requirements had to be translated into structural geometry while respecting strict material constraints (matboard only, contact cement only)."
-            evidence="Constraints defined the design space: no additional materials, fixed span length. Translating these into MATLAB inputs required careful requirements mapping."
-            assessment="Translating abstract requirements into concrete design parameters is often the hardest step. This CTMF forces that translation explicitly — highly recommended for any constrained design problem."
+            description="The load requirement that we wanted to support and the material constraint of using only matboard and contact cement, and only the quantity provided to us by the CIV102 course, we were constrained by these material properties and its limits. This meant that we had to design within these constraints, which influenced our design choices and the analytical modeling we performed in MATLAB to predict failure."
+            evidence="From the material property constraints and load requirements, we derived specific design parameters such as the geometry of the bridge, the thickness of the matboard, and the type of joints used. These requirements directly influenced our design concepts and the assumptions we made in our analytical model. For example, we had to consider how to maximize load distribution while minimizing stress concentrations at the joints, which were critical given the material limitations. At the same time, we also had to be within the minimum length requirement for our bridge, while also accounting for any potential 'human' errors in cutting and measuring the matboard pieces (which we are also limited by the precision and accuracy of our rulers and scissors)."
+            assessment="This project reinforced the importance of clearly defining requirements and understanding material constraints in the design process. It highlighted how these factors shape design decisions and the need to balance theoretical predictions with practical considerations. In future projects, I will continue to prioritize a thorough understanding of requirements and constraints early in the design process to ensure that my solutions are both innovative and feasible within the given parameters."
           />
         </FadeIn>
         <FadeIn delay={0.5}>
           <div style={{ background: "#e1f5ee", borderRadius: 12, padding: "20px 24px", borderLeft: "4px solid #0f6e56", marginTop: 8 }}>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#0f6e56", letterSpacing: 2 }}>REFLECTION</span>
             <p style={{ fontSize: 15, color: "#0f6e56", margin: "8px 0 0", lineHeight: 1.7, textAlign: "justify" }}>
-              Simulation can predict behavior in ideal conditions, but real engineering requires accounting for manufacturing imperfections and material limitations. The 500 N gap between prediction and reality was not a failure of the model — it was a gap in assumptions about construction quality.
+              This project taught me the importance of considering real-world limitations in the design process. While our initial designs were theoretically sound, the constraints of available materials and manufacturing processes required significant adjustments. It reinforced the need for a holistic approach to engineering design, where theoretical knowledge is balanced with practical considerations.
+              Additionally, the project highlighted the value of iterative testing and refinement. Our initial predictions were based on idealized assumptions, and it was only through physical testing that we were able to identify the critical failure points in our design (not reinforcing the joint connection since the matboard material we had been provided with was not long enough so we had to glue pieces together to make it longer). This experience has shaped my approach to future projects by emphasizing the importance of prototyping and testing early and often, to ensure that my designs are not only innovative but also grounded in real-world performance.
             </p>
           </div>
         </FadeIn>
