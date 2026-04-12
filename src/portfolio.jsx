@@ -21,6 +21,7 @@ import ESC102showcase2 from "./assets/esc102-showcase2.jpg";
 import ESC102solder from "./assets/esc102-solder.jpg";
 import ESC102toothpaste from "./assets/esc102-toothpaste-demo.mp4";
 import ESC102toothpaste2 from "./assets/esc102-toothpaste.jpg";
+import ESC102team from "./assets/esc102-team.png";
 import SUMOblue from "./assets/sumo-blue.jpg";
 import SUMOfinal from "./assets/sumo-final.jpg";
 import SUMOfinal2 from "./assets/sumo-final2.jpg";
@@ -28,6 +29,8 @@ import SUMOfinal3 from "./assets/sumo-final3.jpg";
 import UOFTbuild from "./assets/uoft-build.jpg";
 import UOFTbuild2 from "./assets/uoft-build2.jpg";
 import UOFTfinal from "./assets/uoft-final.jpg";
+import ESC102poster from "./assets/esc102-poster.png";
+import ESC102suction from "./assets/ESC102-suction.jpg";
 
 
 const NAV_ITEMS = [
@@ -518,7 +521,7 @@ export default function Portfolio() {
                   that could support a maximum load before failure. In groups of three, we had to predict what that maximum load was, and why the bridge would fail (the failure method).
                   During the design process, we had to consider various factors such as the geometry of the bridge, the properties of the materials, and the expected load distribution. We also had to create an analytical model to predict the failure load and method, which we then tested through physical load-to-failure experiments. 
                 </InfoCard>
-                <InfoCard label="Outcome">
+                <InfoCard label="Design Outcome">
                   Our bridge ("The Great EGGspectations") failed ~500 N earlier than predicted in the actual testing compared to our analytical model in MATLAB. We predicted failure at around 700 N, but the physical test showed failure at around 200 N. 
                   The failure method was adhesive failure at the joints, which was not predicted by our analytical model. The bridge's structural members remained intact, and one of our teammates could even stand on the bridge post-failure without it collapsing completely.
                   Our analytical model assumed ideal joints with perfect adhesion, which led to an overestimation of the bridge's load-bearing capacity. The real-world performance was limited by the weakness of the adhesive connections, which were the critical failure points under load.
@@ -641,56 +644,97 @@ export default function Portfolio() {
       </ProjectSection>
 
       {/* Project 3 — COMETS */}
-      <ProjectSection id="comets" title="COMETS — Cold-Optimized Multi-Eyepiece Turner" subtitle="Accessibility Design · ESC102 Praxis II" tag="Project 03 · Praxis II" accent="#993C1D">
+      <ProjectSection id="comets" title="COMETS — Cold-Optimized Multi-Eyepiece Turner" subtitle="Praxis II · ESC102 · Featuring Anna Huo, Sebastien McCown-Kobinger, and Alex Wang " tag="Project 03 · Praxis II" accent="#993C1D">
+        <FadeIn delay={0.3}>
+            <div style={{ display: "flex", gap: "12px", marginTop: 24, justifyContent: "center" }}>
+        <figure style={{ margin: 0, width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <img
+          src={ESC102poster}
+          alt=""
+          style={{ width: "100%", borderRadius: "8px", display: "block" }}
+        />
+        <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6, marginBottom: 32 }}>
+          COMETS poster for the final showcase presentation.
+        </figcaption>
+        
+      </figure>
+      </div>
+      </FadeIn>
         <TwoCol
           left={
             <div>
               <FadeIn delay={0.1}>
-                <InfoCard label="The Problem">
-                  Astronomers with Raynaud's disease experience reduced blood circulation in cold environments, making fine motor control difficult — especially when adjusting small eyepiece screws during nighttime observations.
+                <InfoCard label="Problem">
+                  After meeting with the Royal Astronomical Society of Canada (RASC), my team and I learned about the challenges faced by amateur astronomers with Raynaud's disease, a condition that causes reduced blood flow to extremities in cold temperatures. This makes it difficult for them to adjust their telescope's eyepiece screws while stargazing in cold outdoor conditions, leading to discomfort and limited usability of their equipment.
                 </InfoCard>
-                <InfoCard label="Stakeholder">
-                  Members of the Royal Astronomical Society of Canada, operating equipment in cold outdoor conditions.
+                <InfoCard label="Design Outcome">
+                  After learning about the specific challenges faced by astronomers with Raynaud's disease, my team decided to focus on the eyepiece screws aspect of the telescope. Especially since during the initial RASC meeting, we learned that many telescope eyepiece screws featured various sizes and are not uniform for every type of telescope. As such, we designed COMETS, which is a device that reduces the need for dexterity to turn eyepiece screws, remove them and put them back on the telescope. This enabled all astronomers, but particularly those with Raynaud's disease to wear thicker gloves while stargazing and adjusting their telescope's eyepiece screws, which improved their comfort and usability of their equipment in cold outdoor conditions.
                 </InfoCard>
-                <InfoCard label="Solution">
-                  COMETS: a cone-shaped mechanical device allowing eyepiece screw adjustment with minimal dexterity. Compatible with multiple screw sizes, usable while wearing gloves.
+                <InfoCard label="What my team did">
+                  After some preliminary research about various design aspects to tackle, my team decided to focus on the eyepiece screws of telescopes, since that was the aspect of stargazing that was most impacted by reduced dexterity in cold temperatures. We then generated various concepts and prototypes for possible solutions to this problem, which included a cone-shaped device that could fit over the eyepiece screws and be turned with less dexterity, a suction mechanism that could hold the eyepiece screws in place while they were being turned, and electronic solutions that would allow for remote adjustment of the screws. After evaluating these concepts based on criteria such as ease of use, practicality, and feasibility, we decided to move forward with the cone-shaped device concept, which we named COMETS. 
+                  After our validation meeting with the RASC to discuss our preliminary design concepts, we decided to iterate upon the cone-shaped device concept, since it was the most promising solution based on user feedback and our own evaluation. We refined the design of COMETS to ensure that it could accommodate various sizes of eyepiece screws without needing adjustment, and we created prototypes to test its functionality and usability in cold outdoor conditions. We also conducted user testing with individuals who have Raynaud's disease to gather feedback and further refine the design based on their experiences and needs.
                 </InfoCard>
               </FadeIn>
             </div>
           }
           right={
             <FadeIn delay={0.2}>
-              <ImagePlaceholder label="COMETS final design — cone device photograph/render" icon="🔭" />
-              <div style={{ marginTop: 12, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-                <ImagePlaceholder label="Early cone concept sketch" aspect="1/1" icon="✏️" />
-                <ImagePlaceholder label="Clamp mechanism concept" aspect="1/1" icon="🔧" />
-              </div>
+              <figure style={{ margin: 0, marginTop: 0, width: "100%", marginTop: 45}}>
+              <img
+                src={ESC102team}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block", objectFit: "cover" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 15 }}>
+               Team picture at the final showcase presentation.
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0, marginTop: 0, width: "100%", marginTop: 45}}>
+              <img
+                src={ESC102showcase2}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 15 }}>
+                Table setup for the final showcase presentation.
+              </figcaption>
+           </figure>
+            <figure style={{ margin: 0, marginTop: 0, width: "100%" , marginTop: 45}}>
+              <img
+                src={ESC102solder}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 15 }}>
+                Soldering and building the initial electrical prototypes for the electronic concept iteration.
+              </figcaption>
+            </figure>
             </FadeIn>
           }
         />
         <FadeIn delay={0.3}>
-          <div style={{ background: "white", border: "1px solid #d3d1c7", borderRadius: 16, padding: "24px 28px", marginBottom: 24 }}>
-            <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 20px" }}>Concept Evolution</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12 }}>
-              {[
-                { label: "Cone Device", status: "selected", icon: "▲" },
-                { label: "Clamp Mechanism", status: "explored", icon: "⊕" },
-                { label: "Arduino Electronic", status: "eliminated", icon: "✗" },
-                { label: "Raspberry Pi Electronic", status: "eliminated", icon: "✗" },
-              ].map(c => (
-                <div key={c.label} style={{
-                  borderRadius: 10, padding: "14px 16px", textAlign: "center",
-                  background: c.status === "selected" ? "#eaf3de" : c.status === "explored" ? "#f1efe8" : "#fcebeb",
-                  border: `1px solid ${c.status === "selected" ? "#639922" : c.status === "explored" ? "#b4b2a9" : "#f09595"}`,
-                }}>
-                  <div style={{ fontSize: 20, marginBottom: 6 }}>{c.icon}</div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: c.status === "selected" ? "#3b6d11" : c.status === "explored" ? "#5f5e5a" : "#a32d2d" }}>{c.label}</div>
-                  <div style={{ fontSize: 11, fontFamily: "'DM Mono', monospace", color: "#888780", marginTop: 4, textTransform: "uppercase", letterSpacing: 1 }}>{c.status}</div>
-                </div>
-              ))}
-            </div>
+        <div style={{ background: "white", border: "1px solid #d3d1c7", borderRadius: 16, padding: "24px 28px", marginBottom: 24 }}>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 20px" }}>Concept Evolution</h3>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12 }}>
+            {[
+              { label: "Cone Device", status: "selected", img: ESC102cone },
+              { label: "Suction Mechanism", status: "explored", img: ESC102suction },
+              { label: "Arduino Electronic", status: "eliminated", img: ESC102arduino },
+              { label: "Raspberry Pi Electronic", status: "eliminated", img: ESC102rpi },
+            ].map(c => (
+              <div key={c.label} style={{
+                borderRadius: 10, padding: "14px 16px", textAlign: "center",
+                background: c.status === "selected" ? "#eaf3de" : c.status === "explored" ? "#f1efe8" : "#fcebeb",
+                border: `1px solid ${c.status === "selected" ? "#639922" : c.status === "explored" ? "#b4b2a9" : "#f09595"}`,
+              }}>
+                <img src={c.img} alt={c.label} style={{ width: "100%", height: 200, objectFit: "contain", borderRadius: 6, marginBottom: 6 }} />
+                <div style={{ fontSize: 12, fontWeight: 600, color: c.status === "selected" ? "#3b6d11" : c.status === "explored" ? "#5f5e5a" : "#a32d2d" }}>{c.label}</div>
+                <div style={{ fontSize: 11, fontFamily: "'DM Mono', monospace", color: "#888780", marginTop: 4, textTransform: "uppercase", letterSpacing: 1 }}>{c.status}</div>
+              </div>
+            ))}
           </div>
-        </FadeIn>
+        </div>
+      </FadeIn>
         <FadeIn delay={0.25}>
           <figure style={{ margin: 0, width: "100%" }}>
           <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
@@ -708,42 +752,42 @@ export default function Portfolio() {
         </figure>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, marginTop: 32, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, marginTop: 64, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
-            name="PIAA (Problem Identification and Analysis)"
+            name="PIAA Model of User Needs"
             strand="Frame"
-            description="Structured the user problem and identified key environmental constraints — particularly cold temperatures and reduced dexterity."
-            evidence="PIAA framework applied at project outset to map Raynaud's symptoms to specific design constraints: glove compatibility, minimal dexterity requirement, cold-weather operation."
-            assessment="Most valuable in accessibility design contexts where user constraints are non-obvious. Forces explicit articulation of the gap between user capability and device requirement."
+            description="Using this framework, we were able to systematically analyze the specific needs and constraints of our target users (astronomers with Raynaud's disease) and translate those into design requirements for COMETS."
+            evidence="We used the PIAA framework to identify the key user needs related to dexterity and comfort in cold conditions, which informed our decision to focus on the eyepiece screws and ultimately led us to the cone-shaped device concept. This framework helped us ensure that our design was grounded in a deep understanding of our users' needs and the context of use."
+            assessment="Personally, I found the PIAA model to be a valuable tool for structuring our user research and ensuring that our design decisions were closely aligned with user needs. It provided a clear framework for translating user insights into actionable design requirements, which was essential for creating a solution that effectively addressed the challenges faced by our target users. I plan to continue using the PIAA model in future projects to maintain a strong focus on user-centered design principles."
           />
           <CTMFCard
             name="SCAMPER"
             strand="Diverge"
-            description="Used to generate variations and modifications of early design concepts — particularly the cone shape and clamp mechanism."
-            evidence="Applied SCAMPER's 'Adapt' and 'Modify' operators to refine the cone geometry to accommodate multiple screw sizes without adjustment."
-            assessment="Effective for generating variations within a concept, but less useful for generating fundamentally different concepts. Best paired with other ideation tools."
+            description="Using the SCAMPER tool, we were able to explore various modifications to our initial cone-shaped device concept, which led us to refine the design to accommodate multiple screw sizes without needing adjustment. For example, we added grooves into the cone, and we also made it so that it was an easy slide-on grip method to hook onto the eyepiece screws, which made it more versatile and user-friendly for astronomers with different types of telescopes."
+            evidence="Using SCAMPER, we generated various iterations of the cone-shaped device concept by applying different modifications such as substituting materials, combining features, and adapting the design to better fit user needs. This iterative process allowed us to refine our design and ultimately arrive at a solution that was more effective and user-friendly for our target audience. We also used 'C' for 'Combine' to combine the cone-shaped device with a grip-enhancing texture, which improved usability for users with reduced dexterity, which was inspired by a mix of our cone-like design and the suction device."
+            assessment="I thought that the SCAMPER tool was particularly helpful in encouraging creative thinking and pushing us to explore a wide range of design possibilities. It provided a structured way to think about how we could modify and improve our initial concept, which ultimately led to a more refined and effective design. I will continue to use the SCAMPER tool in future projects to facilitate ideation and encourage innovative thinking during the design process."
           />
           <CTMFCard
-            name="Verification with Users"
+            name="Validation with Stakeholders"
             strand="Converge"
-            description="Stakeholder feedback from the astronomy community guided the transition from complex electronic designs to a simpler, more robust mechanical solution."
-            evidence="After discussions with RASC members, we learned that electronics fail in cold weather and add unnecessary complexity. This validated elimination of both Arduino and Raspberry Pi concepts."
-            assessment="The single most impactful CTMF in this project. Without direct stakeholder input, we would have pursued electronic solutions that users explicitly did not want. Non-negotiable for accessibility design."
+            description="After beta release where we had designed our initial prototype solutions to solve the issue with eyepiece screws on telescopes for astronomers with Raynaud's disease, we met virtually with members of the Royal Astronomical Society of Canada (RASC) to validate our design concepts and gather feedback. During this meeting, we presented our initial concepts, including the cone-shaped device, the suction mechanism, and the electronic solutions using Arduino and Raspberry Pi. The feedback we received from the RASC members was crucial in guiding our design decisions and ultimately led us to eliminate the electronic solutions due to their complexity and potential issues with reliability in cold weather conditions."
+            evidence="After discussing our initial design concepts with the RASC members, we received feedback that the electronic solutions, while innovative, were not practical for our target users due to concerns about reliability in cold outdoor conditions and the added complexity of using electronic devices. This feedback led us to eliminate the Arduino and Raspberry Pi concepts from our design process and focus on refining the cone-shaped device, which was more aligned with user needs and preferences. The validation meeting with the RASC was a critical step in ensuring that our design was grounded in real user feedback and that we were addressing the right problems with our solution."
+            assessment="I thought that this was the single most impactful framework we used in the design process, since it provided us with direct feedback from our target users and helped us ensure that our design decisions were aligned with their needs and preferences. It reinforced the importance of engaging with stakeholders throughout the design process to validate our assumptions and gather insights that can guide our design decisions. I will continue to prioritize stakeholder validation in future projects to ensure that my designs are user-centered and effectively address real-world problems."
           />
         </FadeIn>
         <FadeIn delay={0.5}>
           <div style={{ background: "#faece7", borderRadius: 12, padding: "20px 24px", borderLeft: "4px solid #993c1d", marginTop: 8 }}>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#993c1d", letterSpacing: 2 }}>REFLECTION</span>
-            <p style={{ fontSize: 15, color: "#993c1d", margin: "8px 0 0", lineHeight: 1.7 }}>
-              Designing for edge-case users often leads to better designs for everyone. Prioritizing accessibility forced us to simplify the device and focus on robustness, ultimately improving usability for all users.
+            <p style={{ fontSize: 15, color: "#993c1d", margin: "8px 0 0", lineHeight: 1.7, textAlign: "justify" }}>
+              This project taught me the importance of grounding design decisions in user feedback and real-world validation. While it can be tempting to pursue innovative solutions, it's crucial to ensure that those solutions are practical and aligned with user needs. The feedback we received from the RASC was instrumental in guiding our design process and ultimately led us to a more effective solution. This experience has reinforced my commitment to engaging with stakeholders throughout the design process and prioritizing user-centered design principles in all of my future projects.
             </p>
           </div>
         </FadeIn>
       </ProjectSection>
 
       {/* Project 4 — Hackathon */}
-      <ProjectSection id="hackathon" title="Interactive Robotic Lamp" subtitle="1st Place · UofTHacks" tag="Project 04 · Extracurricular" accent="#534AB7">
+      <ProjectSection id="hackathon" title="Interactive Robotic Lamp" subtitle="1st Place · UofTHacks · Featuring Aadya Khanna and Jordan Janakievski" tag="Project 04 · Extracurricular" accent="#534AB7">
         <FadeIn delay={0.1}>
           <div style={{ background: "#eeedfe", borderRadius: 12, padding: "16px 24px", display: "flex", alignItems: "center", gap: 12, marginBottom: 28, border: "1px solid #afa9ec" }}>
             <span style={{ fontSize: 22 }}>🏆</span>
