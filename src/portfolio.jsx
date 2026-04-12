@@ -307,35 +307,62 @@ export default function Portfolio() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p style={{ fontSize: 18, lineHeight: 1.8, color: "#5f5e5a", maxWidth: 620, marginBottom: 40 }}>
-              I approach engineering design as the process of resolving real-world constraints while prioritizing human experience. Many of the problems I work on involve conflicting requirements — cleanliness vs compliance, strength vs material limits, simplicity vs functionality.
-            </p>
+            <p style={{ fontSize: 18, lineHeight: 1.8, color: "#5f5e5a", maxWidth: 620, margin: "0 auto 40px", textAlign: "center" }}>
+            I approach engineering design as a process of navigating and resolving tensions between various constraints, needs, and possibilities.
+          </p>
+          <p style={{ fontSize: 15, lineHeight: 1.8, color: "#185fa5", maxWidth: 620, margin: "0 auto 40px", textAlign: "center" }}>
+          My engineering design values are:
+        </p>
           </FadeIn>
           <FadeIn delay={0.35}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16, marginBottom: 48 }}>
-              {[
-                { icon: "◎", label: "Human-Centered Design", desc: "Understanding stakeholder needs first" },
-                { icon: "◈", label: "Analytical Modeling", desc: "Validate with data and experimentation" },
-                { icon: "◐", label: "Iterative Prototyping", desc: "Refine through repeated testing" },
-                { icon: "⬡", label: "Systems Thinking", desc: "Integrate mechanical, electrical, software" },
-              ].map(p => (
-                <div key={p.label} style={{ background: "white", borderRadius: 12, padding: "18px 20px", border: "1px solid #d3d1c7" }}>
-                  <div style={{ fontSize: 22, marginBottom: 8, color: "#185fa5" }}>{p.icon}</div>
-                  <div style={{ fontWeight: 600, fontSize: 14, color: "#2c2c2a", marginBottom: 4 }}>{p.label}</div>
-                  <div style={{ fontSize: 13, color: "#888780", lineHeight: 1.5 }}>{p.desc}</div>
-                </div>
-              ))}
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 16, marginBottom: 48 }}>
+          {[
+            { label: "Accessibility First", desc: "Design for edge cases and diverse user needs from the start", icon: "♿" },
+            { label: "Inclusive Design", desc: "Solutions that work for everyone, not just the average user", icon: "🤝" },
+            { label: "Edge Case Thinking", desc: "Stress-test designs against unlikely but critical failure conditions", icon: "⚠️" },
+            { label: "Iterative Prototyping", desc: "Refine through repeated testing and user feedback", icon: "🔁" },
+            { label: "Analytical Modeling", desc: "Validate assumptions with data and experimentation", icon: "📐" },
+            { label: "Systems Thinking", desc: "Integrate mechanical, electrical, and software considerations", icon: "⚙️" },
+          ].map(p => (
+            <div key={p.label} style={{ background: "white", borderRadius: 12, padding: "18px 20px", border: "1px solid #d3d1c7", width: 180, textAlign: "center" }}>
+              <div style={{ fontSize: 22, marginBottom: 8 }}>{p.icon}</div>
+              <div style={{ fontWeight: 600, fontSize: 14, color: "#2c2c2a", marginBottom: 4 }}>{p.label}</div>
+              <div style={{ fontSize: 13, color: "#888780", lineHeight: 1.5 }}>{p.desc}</div>
             </div>
+          ))}
+        </div>
           </FadeIn>
           <FadeIn delay={0.25}>
-          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
-            <iframe
-              src="https://www.youtube.com/embed/xtdQjQLA41g"
-              title="Original Position Statement"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
-            />
+          <figure style={{ margin: 0, width: "100%" }}>
+            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
+              <iframe
+                src="https://www.youtube.com/embed/xtdQjQLA41g"
+                title="Original Position Statement"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+              />
+            </div>
+            <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+              Original Position Statement
+            </figcaption>
+          </figure>
+        </FadeIn>
+        <FadeIn delay={0.4}>
+          <div style={{ background: "white", border: "1px solid #d3d1c7", borderRadius: 16, padding: "24px 28px", marginTop: 32 }}>
+            <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 16px" }}>Reflecting on My Position Statement</h3>
+            <p style={{ fontSize: 15, lineHeight: 1.8, color: "#5f5e5a", margin: "0 0 16px", textAlign: "justify" }}>
+              In my original position statement, I identified accessibility and designing for edge cases as core values, which is a belief that good engineering should work not just for the average user, but for everyone, including those whose needs are most easily overlooked.
+            </p>
+            <p style={{ fontSize: 15, lineHeight: 1.8, color: "#5f5e5a", margin: "0 0 16px", textAlign: "justify" }}>
+              Looking back at the projects I pursued this year, that value has consistently shaped the questions I ask at the start of a design process. Whether considering the range of users who might interact with a device, or stress-testing a design against unlikely but important failure conditions, I find myself drawn to the boundaries of a problem, the cases where a design either holds up or falls apart.
+            </p>
+            <p style={{ fontSize: 15, lineHeight: 1.8, color: "#5f5e5a", margin: "0 0 16px", textAlign: "justify" }}>
+              This orientation toward accessibility has deepened into a broader commitment to inclusive, robust design, one that treats edge cases not as exceptions to be deprioritized, but as the truest test of whether an engineering solution is complete. However, I now also recognize the importance of balancing this with other values such as feasibility, aesthetics, and user delight, which is something I want to continue exploring in future projects. 
+            </p>
+             <p style={{ fontSize: 15, lineHeight: 1.8, color: "#5f5e5a", margin: 0, textAlign: "justify" }}>
+              At the same, I think that my key takeaway from this year has been the importance of actual testing and iteration in grounding design decisions, especially when it comes to edge cases. No amount of upfront analysis can substitute for putting a prototype in front of real users and seeing how it performs under real conditions.
+            </p>
           </div>
         </FadeIn>
           <FadeIn delay={0.5}>
@@ -442,7 +469,7 @@ export default function Portfolio() {
           </div>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#185fa5", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Claims and Types of Claims"
@@ -602,7 +629,7 @@ export default function Portfolio() {
     </FadeIn>
         
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px", marginTop: 32 }}>Concepts, Tools, Models, and Frameworks Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#185fa5", textTransform: "uppercase", margin: "0 0 12px", marginTop: 32 }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Deductive vs Inductive Reasoning"
@@ -752,7 +779,7 @@ export default function Portfolio() {
         </figure>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, marginTop: 64, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, marginTop: 64, color: "#185fa5", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="PIAA Model of User Needs"
@@ -789,59 +816,66 @@ export default function Portfolio() {
       {/* Project 4 — Hackathon */}
       <ProjectSection id="hackathon" title="Interactive Robotic Lamp" subtitle="1st Place · UofTHacks · Featuring Aadya Khanna and Jordan Janakievski" tag="Project 04 · Extracurricular" accent="#534AB7">
         <FadeIn delay={0.1}>
-          <div style={{ background: "#eeedfe", borderRadius: 12, padding: "16px 24px", display: "flex", alignItems: "center", gap: 12, marginBottom: 28, border: "1px solid #afa9ec" }}>
-            <span style={{ fontSize: 22 }}>🏆</span>
-            <div>
-              <div style={{ fontWeight: 600, color: "#3c3489", fontSize: 15 }}>1st Place Winner — UofTHacks</div>
-              <div style={{ fontSize: 13, color: "#534ab7" }}>36-hour hackathon · Hardware + Software integration</div>
-            </div>
+        <div style={{ background: "#eeedfe", borderRadius: 12, padding: "16px 24px", display: "flex", justifyContent: "center", textAlign: "center", alignItems: "center", gap: 12, marginBottom: 28, border: "1px solid #afa9ec" }}>
+          <span style={{ fontSize: 22 }}>🏆</span>
+          <div>
+            <div style={{ fontWeight: 600, color: "#3c3489", fontSize: 15, textAlign: "center" }}>1st Place Winner for Hack The Human-Robot Experience — UofTHacks — Jan 2026</div>
+            <div style={{ fontSize: 13, color: "#534ab7" }}>36-hour hackathon · Hardware + Software integration</div>
           </div>
-        </FadeIn>
+        </div>
+      </FadeIn>
         <TwoCol
           left={
             <div>
               <FadeIn delay={0.15}>
                 <InfoCard label="The Problem">
-                  Long study sessions can be isolating. We explored how a device could provide interactive companionship during work sessions without distracting from the task.
+                  As students, one of the main struggles that we face with, especially during the long winter terms would be the lack of motivation to get out of bed and start our day. This is especially true during the cold winter mornings where the warmth of our beds makes it difficult to get up and start our day. For this reason, we wanted to design a solution that would make waking up in the morning more enjoyable and interactive, while also providing a sense of companionship and motivation to get out of bed.
                 </InfoCard>
                 <InfoCard label="Solution">
-                  A chihuahua-inspired robotic lamp that reacts to user presence — motion detection via camera, motorized movements, and sound effects triggered by proximity.
+                  Meet "Wattson" (like Watson, the sidekick from Sherlock Holmes, but "watt" as in power), a robotic lamp designed to make waking up in the morning more enjoyable and interactive. Wattson is a chihuahua-inspired robotic lamp that reacts to user presence through motion detection via a camera, motorized movements, and sound effects triggered by proximity. The idea is that when the user approaches the lamp in the morning, it will detect their presence and respond with playful movements and sounds, creating a more engaging and motivating wake-up experience.
                 </InfoCard>
-                <InfoCard label="My Contributions">
-                  Hardware assembly and debugging. Raspberry Pi integration with the sponsor API. Implementing motion and sound interactions.
+                <InfoCard label="What my team did">
+                  After initially discussing what my team wanted to work together on and build for the UofTHacks hackathon, we decided to build a robotic lamp that would react to user presence in the morning to make waking up more enjoyable and interactive. We then brainstormed various concepts for how the lamp could react to user presence, and we decided on a chihuahua-inspired design that would use motion detection via a camera, motorized movements, and sound effects triggered by proximity. We then spent the next 36 hours building the hardware and software for Wattson, which involved integrating a Raspberry Pi 5 with five motors to create the desired movements and behaviors. We also implemented the motion detection and sound effects using a sponsor-provided API, and we iteratively tested and refined our design throughout the hackathon to ensure that it was functional and engaging for users.
                 </InfoCard>
               </FadeIn>
             </div>
           }
           right={
             <FadeIn delay={0.2}>
-              <VideoPlaceholder label="Robotic lamp demo video — motion reaction behavior" />
-              <div style={{ marginTop: 12 }}>
-                <ImagePlaceholder label="Raspberry Pi 5 wiring and motor integration" icon="🤖" />
-              </div>
+              <figure style={{ margin: 0, marginTop: 0, width: "100%" }}>
+              <img
+                src={UOFTfinal}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", maxHeight: "350px", display: "block", objectFit: "cover" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+               Final prototype of "Wattson", the interactive robotic lamp, showcased at UofTHacks.
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0, marginTop: 6, width: "100%" }}>
+              <img
+                src={UOFTbuild}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block", maxHeight: "400px", objectFit: "cover" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                  Assemblying the hardware and integrating the Raspberry Pi 5 with the motors to create the desired movements and behaviors for Wattson.
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0, marginTop: 0, width: "100%" }}>
+              <img
+                src={UOFTbuild2}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", maxHeight: "300px", display: "block", objectFit: "cover" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                Testing out the motor movement for different reactions of the robot.
+              </figcaption>
+            </figure>
             </FadeIn>
           }
         />
-        <FadeIn delay={0.3}>
-          <div style={{ background: "white", border: "1px solid #d3d1c7", borderRadius: 16, padding: "24px 28px", margin: "0 0 24px" }}>
-            <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 16px" }}>Major Technical Challenges</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {[
-                { h: "~12 hrs", label: "Raspberry Pi boot failure", desc: "Incorrect SD card flashing required full reconfiguration" },
-                { h: "5 motors", label: "Individual motor initialization", desc: "Each motor required separate initialization post-assembly — not documented" },
-                { h: "3+ passes", label: "Assembly manual gaps", desc: "Hidden step dependencies required partial disassembly mid-build" },
-              ].map(c => (
-                <div key={c.h} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 700, color: "#534ab7", minWidth: 64 }}>{c.h}</div>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 14, color: "#2c2c2a" }}>{c.label}</div>
-                    <div style={{ fontSize: 13, color: "#888780", lineHeight: 1.5 }}>{c.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
+      
         <FadeIn delay={0.25}>
           <figure style={{ margin: 0, width: "100%" }}>
           <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
@@ -859,62 +893,79 @@ export default function Portfolio() {
         </figure>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, marginTop: 32, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, marginTop: 64, letterSpacing: 2, color: "#185fa5", textTransform: "uppercase", margin: "0 0 12px", marginTop: 32 }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Design Space Exploration"
             strand="Diverge"
-            description="In early hackathon hours, our team explored multiple interaction concepts — different personalities, behaviors, and physical forms — before committing to the chihuahua-inspired lamp."
-            evidence="Rapid whiteboard session evaluating companion animal personalities, static vs moving lamps, sound-only vs motion-based interaction."
-            assessment="Under time pressure, design space exploration is tempting to skip. This project showed its value: our early divergence led to a more distinctive concept than the obvious 'functional desk lamp' framing."
+            description="At the beginning of the hackathon on day one, our team brainstormed various concepts for the robotic lamp, considering different personalities, behaviors, and physical forms, and what exactly we wanted our lamp to achieve, and what problem we wanted it to solve."
+            evidence="We generated a wide range of concepts for the robotic lamp, including different animal inspirations (e.g., cat, dog, bird), various types of movements (e.g., wagging tail, nodding head, spinning), and different sound effects (e.g., barking, purring, chirping). We also considered different use cases and user interactions, such as how the lamp would respond to different levels of proximity or movement. We also restricted various aspects of the design and considered what we could make it do instead. For example, what if the robot did not talk and would only be able to make sound effects? What if the robot did not have colour?This initial design space exploration allowed us to identify the most promising concepts and ultimately led us to the chihuahua-inspired design that we implemented."
+            assessment="From the design space exploration and restricting various aspects of the design, we were able to narrow down our options and focus on the most viable concept. From this process, I learned that it's important to generate a wide range of ideas and concepts at the beginning of the design process, even if some of them may seem far-fetched or impractical. This allows for creative thinking and can lead to innovative solutions that may not have been considered otherwise. Additionally, the process of restricting certain aspects of the design can help to further refine and focus the concept, which is especially important in a time-constrained environment like a hackathon. I will continue to prioritize design space exploration in future projects to encourage creativity and innovation in my design process."
           />
           <CTMFCard
             name="Rapid Prototyping"
             strand="Represent"
-            description="Within 36 hours, we assembled hardware, integrated Raspberry Pi 5, connected five motors, and implemented movement behaviors using a sponsor-provided API."
-            evidence="Multiple physical assembly and disassembly cycles. Software developed in parallel with hardware integration."
-            assessment="Rapid prototyping under genuine time pressure is qualitatively different from scheduled prototyping. The stakes force prioritization — a useful skill to develop deliberately."
+            description="Within 36 hours, we assembled hardware, integrated Raspberry Pi 5, connected five motors, and implemented movement behaviors using a sponsor-provided API. This involved multiple cycles of physical assembly and disassembly as we iteratively tested and refined our design to achieve the desired functionality and user experience."
+            evidence="We experimented with different motor configurations and movement patterns, which required us to quickly assemble and disassemble the hardware multiple times throughout the hackathon. We also had to troubleshoot various issues with the Raspberry Pi integration and motor control, which further emphasized the need for rapid prototyping and iterative testing in a time-constrained environment. Furthermore, we also experimented with various different sound effects and movements that we could implement with the sponsor-provided API, which also required rapid prototyping and testing to see what worked best for our design and user experience goals."
+            assessment="From this experience I learned the importance of rapid prototyping in the design process, especially in a fast-paced environment like a hackathon. Rather than focusing on perfectionism, sometimes, the best thing to do is to have 'something', even if it barely functions, rather than something perfect that is nonexistent. It allowed us to quickly test and refine our design, which was crucial for achieving the desired functionality and user experience within the limited time frame. Additionally, the iterative nature of rapid prototyping helped us to identify and address issues early on, which ultimately led to a more polished and effective final product. I will continue to prioritize rapid prototyping in future projects to facilitate iterative design and ensure that my solutions are well-tested and refined before final implementation."
           />
           <CTMFCard
             name="Iterative Testing and Debugging"
             strand="Converge"
-            description="Systematic identification of hardware issues — boot failure, motor initialization, assembly dependencies — through repeated testing cycles over 12 hours."
-            evidence="Each failure revealed a new constraint: boot failure → SD card reflash → motor init sequence → assembly order. Documented each to avoid repetition."
-            assessment="The most transferable takeaway: treat debugging as structured inquiry, not random trial. Each test should be designed to eliminate a specific hypothesis. This mindset cut our actual debug time significantly."
+            description="My team faced some systemic hardware and software integration issues during the hackathon, which required us to adopt a structured approach to debugging. We systematically tested each component of our design (e.g., motor control, motion detection, sound effects) to identify the root causes of the issues we were facing. At the same time, because of the fact that the LEDs that we were given did not work and the voice feature of the lamp also did not work, we ended up having to remove some original ideas from our diverging session, and coverged onto some other ideas due to unexpected constraints."
+            evidence="Each failure revealed a new constraint: boot failure → SD card reflash → motor init sequence → assembly order. We had to iteratively test and debug each component of our design, which involved systematically isolating and testing different parts of the hardware and software to identify the root causes of the issues we were facing. For example, when we encountered boot failures with the Raspberry Pi, we had to reflash the SD card and test the boot sequence again. When we faced issues with motor initialization, we had to test different assembly orders and configurations to identify the optimal setup. Additionally, when certain features (like the LEDs and voice) did not work as expected, we had to pivot and adjust our design to accommodate these constraints, which further emphasized the importance of iterative testing and debugging in a fast-paced design environment."
+            assessment="I think that the most transferable takeaway from this experience is the value of a structured approach to debugging. By systematically testing each component and isolating issues, we were able to identify root causes more efficiently and develop more effective solutions. At the same time, I learned to recognize that sometimes it's necessary not to be too attached to an idea and pivot when unexpected constraints arise, which is a valuable lesson in adaptability and resilience in the design process. I will continue to apply these principles of iterative testing, structured debugging, and adaptability in future projects to ensure that I can effectively navigate challenges and deliver successful design outcomes."
           />
         </FadeIn>
         <FadeIn delay={0.5}>
           <div style={{ background: "#eeedfe", borderRadius: 12, padding: "20px 24px", borderLeft: "4px solid #534ab7", marginTop: 8 }}>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#534ab7", letterSpacing: 2 }}>REFLECTION</span>
-            <p style={{ fontSize: 15, color: "#534ab7", margin: "8px 0 0", lineHeight: 1.7 }}>
-              This project reinforced the importance of adaptability in fast-paced environments. Engineering design can focus not only on functionality, but also on emotional and experiential impact — and that framing opened up more interesting solutions.
+            <p style={{ fontSize: 15, color: "#534ab7", margin: "8px 0 0", lineHeight: 1.7, textAlign: "justify" }}>
+              This hackathon was a valuable learning experience that reinforced the importance of creativity, rapid prototyping, and iterative testing in the design process. It taught me to embrace constraints and unexpected challenges as opportunities for innovation and growth. The collaborative nature of the hackathon also highlighted the value of teamwork and diverse perspectives in achieving a successful design outcome. Overall, this experience has strengthened my skills in hardware-software integration, problem-solving, and adaptability, which I will carry forward into future projects and endeavors in the field of design and engineering.
             </p>
           </div>
         </FadeIn>
       </ProjectSection>
 
       {/* Project 5 — Sumo */}
-      <ProjectSection id="sumo" title="UTRA Autonomous Sumo Robot" subtitle="Competitive Robotics · UTRA SUMO" tag="Project 05 · Extracurricular" accent="#3B6D11">
+      <ProjectSection id="sumo" title="UTRA Autonomous Sumo Robot" subtitle="Competitive Robotics · UTRA SUMO · Featuring Claire Yang and Ritisha Garg" tag="Project 05 · Extracurricular" accent="#3B6D11">
         <TwoCol
           right={
             <FadeIn delay={0.1}>
-              <ImagePlaceholder label="SolidWorks robot design model" icon="🤖" />
-              <div style={{ marginTop: 12 }}>
-                <ImagePlaceholder label="Competition sumo ring — match in progress" aspect="4/3" icon="⚡" />
-              </div>
+               <figure style={{ margin: 0, marginTop: 0, width: "100%" }}>
+              <img
+                src={SUMOblue}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", maxHeight: "350px", display: "block", objectFit: "cover" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+               Initial prototype of our UTRA autonomous sumo robot, which was too short and small to fit all the components.
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0, marginTop: 6, width: "100%" }}>
+              <img
+                src={SUMOfinal}
+                alt="Concept sketches — backpack holding devices"
+                style={{ width: "100%", borderRadius: "8px", display: "block", maxHeight: "400px", objectFit: "cover" }}
+              />
+              <figcaption style={{ textAlign: "center", fontSize: "0.85rem", color: "#888", marginTop: 6 }}>
+                Final prototype of our UTRA autonomous sumo robot (named "Lorax" because of its colour), which was redesigned to be larger and heavier to optimize for the competition. 
+              </figcaption>
+            </figure>
+            
             </FadeIn>
           }
           left={
             <div>
               <FadeIn delay={0.15}>
                 <InfoCard label="Overview">
-                  As part of the UTRA SUMO team, designed and built an autonomous robot for competitive sumo matches. Technologies: SolidWorks (mechanical), Arduino (control), custom circuit design.
+                  As part of the University of Toronto Robotics Association (UTRA) Sumo team, we designed and built an autonomous sumo robot to compete in the annual UTRA Sumo competition. The goal of the competition is to design a robot that can autonomously push its opponent out of a circular ring. This project involved multiple iterations of design, prototyping, and testing to optimize the robot's performance within the constraints of the competition rules and materials.
                 </InfoCard>
                 <InfoCard label="Key Design Issues Found">
-                  Single 9V battery shared between Arduino and motor driver caused insufficient motor power. Low robot mass made it easy to push out of the ring.
+                  During our initial testing, we found that our robot was underpowered and too light, which made it easy for opponents to push us out of the ring. This was a critical issue that needed to be addressed in order to be competitive in the matches.
                 </InfoCard>
                 <InfoCard label="Design Improvements">
-                  Dedicated battery for Arduino. Two 9V batteries in parallel for motor driver (increased current output). Mass increased to competition weight limit.
+                  We implemented two major design improvements to address the issues we found during testing. First, we increased the mass of our robot to the competition limit of 0.5kg, which provided better traction and stability during matches. Second, we redesigned our power system to provide greater current output to the motors, which improved our torque and overall performance in pushing opponents out of the ring. This improvement allowed us to win the second UofT sumo competition that we participated in, and we were able to hold our position against opponents where we previously could not.
                 </InfoCard>
               </FadeIn>
             </div>
@@ -922,24 +973,31 @@ export default function Portfolio() {
           flip
         />
         <FadeIn delay={0.3}>
-          <div style={{ background: "white", border: "1px solid #d3d1c7", borderRadius: 16, padding: "24px 28px", margin: "24px 0" }}>
-            <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 16px" }}>Power System Redesign</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-              <div>
-                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#e24b4a", letterSpacing: 1, marginBottom: 8 }}>BEFORE — Underpowered</div>
-                <div style={{ background: "#fcebeb", borderRadius: 10, padding: 16 }}>
-                  <div style={{ fontSize: 13, color: "#a32d2d", lineHeight: 1.7 }}>Single 9V battery → Arduino + Motor Driver (shared). Result: insufficient torque, robot easily pushed.</div>
-                </div>
-              </div>
-              <div>
-                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#3b6d11", letterSpacing: 1, marginBottom: 8 }}>AFTER — Optimized</div>
-                <div style={{ background: "#eaf3de", borderRadius: 10, padding: 16 }}>
-                  <div style={{ fontSize: 13, color: "#3b6d11", lineHeight: 1.7 }}>Dedicated battery → Arduino. Two 9V batteries (parallel) → Motor Driver. Result: full torque at max weight.</div>
-                </div>
+      <div style={{ background: "white", border: "1px solid #d3d1c7", borderRadius: 16, padding: "24px 28px", margin: "24px 0" }}>
+        <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 16px" }}>Power System Redesign</h3>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#e24b4a", letterSpacing: 1, marginBottom: 8 }}>BEFORE — Underpowered</div>
+            <div style={{ background: "#fcebeb", borderRadius: 10, padding: 16 }}>
+              <div style={{ fontSize: 13, color: "#a32d2d", lineHeight: 1.7, textAlign: "justify" }}>
+                Single 9V battery → Arduino + Motor Driver (shared).<br />
+                Result: insufficient torque (the robot was very slow), robot easily pushed around and out of the ring.
               </div>
             </div>
           </div>
-        </FadeIn>
+          <div>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#3b6d11", letterSpacing: 1, marginBottom: 8 }}>AFTER — Optimized</div>
+            <div style={{ background: "#eaf3de", borderRadius: 10, padding: 16 }}>
+              <div style={{ fontSize: 13, color: "#3b6d11", lineHeight: 1.7, textAlign: "justify"  }}>
+                Dedicated battery → Arduino.<br />
+                Two 9V batteries (parallel) → Motor Driver.<br />
+                Result: full torque (the robot was much faster) at max weight.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </FadeIn>
         <FadeIn delay={0.25}>
           <figure style={{ margin: 0, width: "100%" }}>
           <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "8px" }}>
@@ -957,35 +1015,35 @@ export default function Portfolio() {
         </figure>
         </FadeIn>
         <FadeIn delay={0.4}>
-          <h3 style={{ fontFamily: "'DM Mono', monospace", marginTop: 32, fontSize: 12, letterSpacing: 2, color: "#888780", textTransform: "uppercase", margin: "0 0 12px" }}>Concepts, Tools, Models, and Frameworks Used</h3>
+          <h3 style={{ fontFamily: "'DM Mono', monospace", marginTop: 32, fontSize: 12, letterSpacing: 2, color: "#185fa5", textTransform: "uppercase", margin: "0 0 12px", marginTop: 64 }}>Concepts, Tools, Models, and Frameworks Used</h3>
           <StrandLegend />
           <CTMFCard
             name="Reference Design"
             strand="Frame"
-            description="Examined successful sumo robot configurations from previous competitions. These informed mass distribution, drivetrain configuration, and control architecture."
-            evidence="Studied competition footage and open-source robot designs to identify common patterns: low center of gravity, front wedge geometry, high-torque motors."
-            assessment="Reference design is most powerful when used to understand the design space's boundaries, not just to copy solutions. Understanding why other designs work is more valuable than copying what they look like."
+            description="Before building our robot, we studied previous competition footage and open-source robot designs to understand the design space and identify common patterns in successful robots. We observed that many successful sumo robots had a low center of gravity, front wedge geometry for pushing opponents, and high-torque motors for better performance."
+            evidence="We examined various reference designs from past UTRA Sumo competitions and online robotics communities, which provided us with insights into effective design strategies and common pitfalls to avoid. For example, we noticed that robots with a low center of gravity were less likely to be pushed out of the ring, and that front wedge designs were effective for getting under opponents and pushing them out. We also observed that high-torque motors were crucial for achieving the necessary force to push opponents out of the ring, which informed our decision to redesign our power system for greater current output."
+            assessment="From this experience, I learned the value of studying reference designs and past competition footage as a way to inform and inspire my own design process. It provided me with a deeper understanding of the design space and helped me identify effective strategies and common pitfalls in sumo robot design. This approach is applicable to many design challenges, as it allows designers to learn from the successes and failures of others and build upon existing knowledge to create more effective solutions. I will continue to utilize reference designs and case studies in future projects to enhance my understanding of the design space and inform my design decisions."
           />
           <CTMFCard
             name="Prototyping"
             strand="Represent"
-            description="Constructed using SolidWorks-designed components, Arduino control, and custom circuits. Early prototypes revealed the robot was underpowered and too light."
-            evidence="First physical test in practice matches immediately exposed performance gaps — robot was consistently pushed out before engaging opponents."
-            assessment="Physical prototyping revealed issues that simulation had not predicted — a recurring theme across all my projects. Simulation is necessary but not sufficient."
+            description="Using SolidWorks, we iteratively designed and prototyped our robot, starting with a basic chassis and then adding components such as motors, wheels, and sensors. We also built physical prototypes to test the robot's performance in practice matches against a consistent opponent to identify weaknesses in our design."
+            evidence="Originally, our first prototype chassis design was very small and short which made it difficult to fit more than one battery and limited our power output. After testing this design in practice matches, we found that our robot was underpowered and easily pushed out of the ring. This led us to iterate on our design by increasing the size of the chassis to accommodate more batteries and redesigning the power system for greater current output. We also tested different wheel configurations and motor placements to optimize traction and performance during matches."
+            assessment="I found that the prototyping process was essential for identifying and addressing design issues that were not apparent during the initial design phase. By building physical prototypes and testing them in practice matches, we were able to gather valuable feedback on the robot's performance and identify specific areas for improvement. This iterative prototyping approach allowed us to refine our design based on real-world performance data, which ultimately led to a more competitive robot. I will continue to prioritize prototyping and iterative testing in future projects to ensure that my designs are well-informed by practical performance insights and can be effectively refined based on user feedback and testing results."
           />
           <CTMFCard
             name="Iterative Testing and System Refinement"
             strand="Converge"
-            description="After identifying performance limitations, implemented two major changes: increased mass to competition limit and redesigned power system for greater current output."
-            evidence="Each iteration tested against the same practice opponent. Improvements were measurable: robot held position where it previously could not."
-            assessment="Iterative refinement is most effective when each iteration tests a specific hypothesis. Our power redesign was a controlled change — we altered only the electrical system, keeping mechanics constant, allowing us to attribute improvement accurately."
+            description="After identifying the issue of being underpowered in our initial design, we systematically tested different power configurations and components to refine our design. We iteratively tested our robot against the same practice opponent to measure improvements and ensure that our changes were effective in enhancing performance."
+            evidence="After our initial testing revealed that our robot was underpowered, we systematically tested different power configurations, such as using dedicated batteries for the Arduino and motor driver, and increasing the number of batteries to provide greater current output. We also tested different motor configurations and placements to optimize performance. Each iteration of testing provided us with data on how the changes affected our robot's performance in practice matches, allowing us to make informed decisions about which design improvements were most effective in addressing the issue of being underpowered."
+            assessment="This taught me the importance of a systematic approach to testing and refinement in the design process. By methodically testing different configurations and measuring their impact on performance, we were able to make informed decisions about how to improve our design. This iterative testing and refinement process is crucial for optimizing performance and ensuring that design changes are effective in addressing identified issues. I will continue to apply this structured approach to testing and refinement in future projects to ensure that my designs are well-optimized and effectively address the challenges they are intended to solve."
           />
         </FadeIn>
         <FadeIn delay={0.5}>
           <div style={{ background: "#eaf3de", borderRadius: 12, padding: "20px 24px", borderLeft: "4px solid #3b6d11", marginTop: 8 }}>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#3b6d11", letterSpacing: 2 }}>REFLECTION</span>
-            <p style={{ fontSize: 15, color: "#3b6d11", margin: "8px 0 0", lineHeight: 1.7 }}>
-              Working on this team strengthened my ability to integrate mechanical, electrical, and software systems into a cohesive design — and sparked my interest in pursuing embedded software engineering specifically.
+            <p style={{ fontSize: 15, color: "#3b6d11", margin: "8px 0 0", lineHeight: 1.7, textAlign: "justify" }}>
+              Working on the UTRA Sumo robot was a valuable experience that reinforced the importance of iterative design, prototyping, and testing in the engineering process. It taught me to embrace challenges and setbacks as opportunities for learning and growth, and to approach design problems with a systematic and data-driven mindset. The competitive nature of the project also highlighted the value of teamwork and collaboration in achieving a successful design outcome. Overall, this experience has strengthened my skills in mechanical design, hardware integration, and performance optimization, which I will carry forward into future projects and endeavors in the field of engineering and robotics.
             </p>
           </div>
         </FadeIn>
