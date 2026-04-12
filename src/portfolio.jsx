@@ -499,6 +499,9 @@ export default function Portfolio() {
             <p style={{ fontSize: 15, color: "#185fa5", margin: "8px 0 0", lineHeight: 1.7, textAlign: "justify" }}>
               Overall, this design project contributed to my understanding of the design process by providing a practical example of how to apply various design frameworks and concepts in a real-world context. It reinforced the importance of human-centered design, evidence-based decision making, and iterative prototyping in creating effective solutions. Additionally, it highlighted the value of embracing divergent thinking and exploring a wide range of possibilities during the early stages of design. This experience has shaped my approach to future projects by encouraging me to prioritize user needs, gather evidence to support my design choices, and remain open to exploring diverse ideas before converging on a solution.
 
+            </p>
+                        <p style={{ fontSize: 15, color: "#185fa5", margin: "16px 0 16px", lineHeight: 1.7, textAlign: "justify" }}>
+
               References:
               [1] Toronto Transit Commission, By-law No. 1: Regulating the Use of the TTC Local Passenger Transportation System. [Online]. Available: https://www.ttc.ca/by-law-no-1
             </p>
