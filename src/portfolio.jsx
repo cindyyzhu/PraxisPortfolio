@@ -474,7 +474,7 @@ export default function Portfolio() {
           <CTMFCard
             name="Claims and Types of Claims"
             strand="Frame"
-            description="My team used the Toulmin's model of argument to structure claims around evidence, such as the fact that it is mandatory to remove backpacks while on the TTC subway trains according to the TTC Bylaw No. 1. Through this approach, my team was able to explain what the problem was, and justify why it mattered."
+            description="My team used the Toulmin's model of argument to structure claims around evidence, such as the fact that it is mandatory to remove backpacks while on the TTC subway trains according to the TTC Bylaw No. 1 [1]. Through this approach, my team was able to explain what the problem was, and justify why it mattered."
             evidence="In our design brief and our final design report, my team structured our problem definition and design justification using claims supported by evidence from our user research and the TTC bylaw. Additionally, we conducted proxy testing on the TTC subway trains during actual commuting hours. In these tests, we made claims about the usability and practicality of our concepts, and supported them with evidence from user feedback and our own observations. As well, we created the proxy tests based on secondary resources and sources from many ISO and ASTM standards regarding backpack handling and ergonomic safety, which we used as evidence to justify the features we tested in our proxy tests."
             assessment="This approach helped me understand the importance of structuring arguments with evidence and clarified the distinction between factual claims and design judgments. It also shaped my approach to gathering evidence and supporting claims based on user research and real-world constraints, which I see as essential for effective design communication and decision-making. I plan to continue using this framework to strengthen the rationale behind my design choices and to ensure that my solutions are well-grounded in evidence."
           />
@@ -498,6 +498,9 @@ export default function Portfolio() {
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#185fa5", letterSpacing: 2 }}>REFLECTION</span>
             <p style={{ fontSize: 15, color: "#185fa5", margin: "8px 0 0", lineHeight: 1.7, textAlign: "justify" }}>
               Overall, this design project contributed to my understanding of the design process by providing a practical example of how to apply various design frameworks and concepts in a real-world context. It reinforced the importance of human-centered design, evidence-based decision making, and iterative prototyping in creating effective solutions. Additionally, it highlighted the value of embracing divergent thinking and exploring a wide range of possibilities during the early stages of design. This experience has shaped my approach to future projects by encouraging me to prioritize user needs, gather evidence to support my design choices, and remain open to exploring diverse ideas before converging on a solution.
+
+              References:
+              [1] Toronto Transit Commission, By-law No. 1: Regulating the Use of the TTC Local Passenger Transportation System. [Online]. Available: https://www.ttc.ca/by-law-no-1
             </p>
           </div>
         </FadeIn>
