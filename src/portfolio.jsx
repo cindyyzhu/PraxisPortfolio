@@ -278,7 +278,7 @@ export default function Portfolio() {
       }}>
         <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
           <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 18, color: "#2c2c2a" }}>
-            Cindy Zhu - Engineering Portfolio
+            Cindy Zhu ♥ Portfolio
           </span>
           <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
             {NAV_ITEMS.map(n => (
