@@ -278,7 +278,7 @@ export default function Portfolio() {
       }}>
         <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
           <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 18, color: "#2c2c2a" }}>
-            Engineering Portfolio
+            Cindy Zhu - Engineering Portfolio
           </span>
           <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
             {NAV_ITEMS.map(n => (
@@ -1057,7 +1057,7 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer style={{ background: "#2c2c2a", color: "#888780", padding: "60px 28px", textAlign: "center" }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, color: "white", marginBottom: 12 }}>Engineering Portfolio - Cindy Zhu</div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, color: "white", marginBottom: 12 }}>Engineering Portfolio - Made with ♥ by Cindy Zhu 2026</div>
         <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, letterSpacing: 2, marginBottom: 24 }}>ESC102 · ENGINEERING SCIENCE PRAXIS II · 2026</div>
         <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
           {NAV_ITEMS.map(n => (
